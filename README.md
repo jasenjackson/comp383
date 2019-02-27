@@ -1,5 +1,5 @@
 # Comp383 MiniProject: 
-Studying Human Herpevirus expression patterns
+## Studying Human Herpevirus expression patterns
 
 The recent paper of Cheng et al. 2017 (https://www.ncbi.nlm.nih.gov/pubmed/29158406) produced the transcriptomes of latent HCMV and as they enter and exit latency. The code in this repository functions as a pipeline to analyze the data from this paper. 
 
