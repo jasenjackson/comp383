@@ -1,6 +1,8 @@
-# Comp383 MiniProject: Studying Human Herpevirus expression patterns -Jasen Jackson
+# Comp383 MiniProject: Studying Human Herpevirus expression patterns
 
-After infection, Human herpesvirus, also known as the Human cytomegalovirus (HCMV) remains latent within the body throughout life and can be reactivated at any time. This can be a life-threatening condition for immune-compromised patients. The recent paper of Cheng et al. 2017 (https://www.ncbi.nlm.nih.gov/pubmed/29158406) produced the transcriptomes of latent HCMV and as they enter and exit latency. The code in this repository functions as a pipeline to analyze the data from this paper. For an example, we use the transcriptomes (RNA-seq) of a single patient's viral load 2 days (2dpi) and 6 days post-infection (6dpi). The analysis pipeline can be broken down into three main steps:
+After infection, Human herpesvirus, also known as the Human cytomegalovirus (HCMV) remains latent within the body throughout life and can be reactivated at any time. This can be a life-threatening condition for immune-compromised patients. The recent paper of Cheng et al. 2017 (https://www.ncbi.nlm.nih.gov/pubmed/29158406) produced the transcriptomes of latent HCMV and as they enter and exit latency. 
+
+The code in this repository functions as a pipeline to analyze the data from this paper. For an example, we use the transcriptomes (RNA-seq) of a single patient's viral load 2 days (2dpi) and 6 days post-infection (6dpi). The analysis pipeline can be broken down into three main steps:
 1. Align the transcriptomes to the reference genome (HCMV.fa), using bowtie and remove anything that does not align.
 2. analyze different expression levels between the provided transcriptomes using TopHat and CuffLinks.
 3. assemble both transcriptomes using spades, and blast that against the non-repeat nucleotide.
