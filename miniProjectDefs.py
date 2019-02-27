@@ -160,7 +160,7 @@ def spades_assemble(out, *inputs):
     output_exists = os.path.isdir(out)
     if not output_exists:
         if in1_exists and in2_exists:
-            spades_command = "spades.py -k 55,77,99,127 -t 4 --only-assembler --pe1-1 "+inputs[0]+" --pe1-2 "+inputs[1]+" --pe2-1 "+inputs[2]+" --pe2-2 "+inputs[3]+" -o "+out+"/"
+            spades_command = "spades -k 55,77,99,127 -t 4 --only-assembler --pe1-1 "+inputs[0]+" --pe1-2 "+inputs[1]+" --pe2-1 "+inputs[2]+" --pe2-2 "+inputs[3]+" -o "+out+"/"
             print(spades_command)
             os.system(spades_command)
         else: print("Could not find input mapped fastqs")
