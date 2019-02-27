@@ -33,9 +33,8 @@ The main.py script takes 4 arguments:
 
 # command line instruction
 
-To run everything from the beginning, with my original settings, just navigate to the "OptionB_Jasen_Jackson" folder and run the following command:
+To run everything from the beginning, with my original settings, just clone this repository and run the following command:
 
-    cd OptionB_Jasen_Jackson
     python3 main.py -m full -g HCMVA.fasta --g HCMV.fa -i SRR5660044,SRR5660045 -s 2dpi,6dpi
     
   
