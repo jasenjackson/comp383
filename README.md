@@ -23,7 +23,7 @@ This analysis can be broken down into three main steps:
 
 # instructions
 The main.py script takes 4 arguments:
-*  '-m','--mode': specifies which mode to run the program in ("full", "2" or "3").
+* '-m','--mode': specifies which mode to run the program in ("full", "2" or "3")
   * "full" mode runs all three steps. 
   *"2" runs steps 1 and 2.
   *"3" runs steps 1 and 3. 
