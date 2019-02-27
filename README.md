@@ -1,4 +1,5 @@
-# Comp383 MiniProject: Studying Human Herpevirus expression patterns
+# Comp383 MiniProject: 
+## Transcriptome-wide characterization of human cytomegalovirus in natural infection and experimental latency.
 
 After infection, Human herpesvirus, also known as the Human cytomegalovirus (HCMV) remains latent within the body throughout life and can be reactivated at any time. This can be a life-threatening condition for immune-compromised patients. The recent paper of Cheng et al. 2017 (https://www.ncbi.nlm.nih.gov/pubmed/29158406) produced the transcriptomes of latent HCMV and as they enter and exit latency. 
 
