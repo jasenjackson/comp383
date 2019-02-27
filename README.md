@@ -1,4 +1,4 @@
-# Comp383 MiniProject: 
+# Comp383 MiniProject
 ## Transcriptome-wide characterization of human cytomegalovirus in natural infection and experimental latency.
 
 After infection, Human herpesvirus, also known as the Human cytomegalovirus (HCMV) remains latent within the body throughout life and can be reactivated at any time. This can be a life-threatening condition for immune-compromised patients. The recent paper of Cheng et al. 2017 (https://www.ncbi.nlm.nih.gov/pubmed/29158406) produced the transcriptomes of latent HCMV and as they enter and exit latency. 
@@ -8,16 +8,22 @@ The code in this repository functions as a pipeline to analyze the data from thi
 2. analyze different expression levels between the provided transcriptomes using TopHat and CuffLinks.
 3. assemble both transcriptomes using spades, and blast that against the non-repeat nucleotide.
 
-## software dependencies
-This script depends on the following software toolsThese must be installed to your path, for the script to work.
-Bowtie2, Samtools,TopHat, Cufflinks, Spades, Biopython and wget for mac users (brew install wget).
+## Software Dependencies
+This script depends on the following software tools: 
+* Bowtie2
+* Samtools
+* TopHat
+* Cufflinks 
+* Spades
+* Biopython
+* wget for mac users ("brew install wget").
+These must be installed to your path, for the script to work.
 
-## data 
-A reference sequence of the HCMV genome is available on this repository (HCMV.fa). However, the transcriptome data sets are too large to store on github. Instead, this script takes as input 2 SRA IDs from the study (for comparisons) and downloads them from the NCBI database. All other files will be generated locally on your computer, in the "OptionB_Jasen_Jackson" folder.
+## Data
+A reference sequence of the HCMV genome is available for download on this repository (HCMV.fa). However, the transcriptome data sets are too large to store on github. Instead, the script handles SRA IDs as the file input for the transcripts and uses WGET to download them from the NCBI database. All other files will be generated locally on your computer, in the "OptionB_Jasen_Jackson" folder.
 
-## arguments
-The main.py script takes 4 arguments:
-* -m,--mode: specifies which mode to run the program in ("full", "2" or "3")
+## Options
+* *-m*,*--mode:* specifies which mode to run the program in ("full", "2" or "3")
   * "full" mode runs all three steps. 
   * "2" runs steps 1 and 2.
   * "3" runs steps 1 and 3. 
