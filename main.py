@@ -36,19 +36,21 @@ def th(genome, genome_name, in_files, samples, log_message):
     return log_message
 
 ## spades step: which publically available strain is most similar to the patient's sample? (requires bt step)
-def sp(genome, genome_name, in_files, samples):
+def sp(genome, genome_name, in_files, samples, log_message):
     print("Assembling Bowtie2 reads in to: /hcmv_assembly/ ...")
     assembly_name = genome_name+"_assembly"
-    fq_1_1 = in_files[0]+".mapped.1.fastq"; fq_1_2 = in_files[0]+".mapped.2.fastq"
-    fq_2_1 = in_files[1]+".mapped.1.fastq"; fq_2_2 = in_files[1]+".mapped.2.fastq"
+    if not os.path.isdir(assembly_name):
+        os.system("mkdir "+assembly_name)
+    fq_1_1 = samples[0]+".mapped.1.fastq"; fq_1_2 = samples[0]+".mapped.2.fastq"
+    fq_2_1 = samples[1]+".mapped.1.fastq"; fq_2_2 = samples[1]+".mapped.2.fastq"
     spades_assemble(assembly_name, fq_1_1, fq_1_2, fq_2_1, fq_2_2)
     num_contigs, bp = filter_contigs(assembly_name, 1000)
     concatenate_fasta("contigs.1000.fasta", 50)
-    log_message = ("There are "+str(num_contigs)+" contigs >1000 in the assembly.\n")
-    log_message+= ("There are "+str(bp)+"bp in the assembly.\n")
-    log_file.write(log_message); print(log_message)
-    log_message = blastn_nr("contigs.1000.concatenated.fasta", 10)
-    log_file.write(log_message)
+    log_message += ("There are "+str(num_contigs)+" contigs >1000 in the assembly.\n")
+    log_message += ("There are "+str(bp)+"bp in the assembly.\n")
+    log_message += blastn_nr("contigs.1000.concatenated.fasta", 10)
+    print(log_message)
+    return log_message
 
 if __name__ == '__main__':
 

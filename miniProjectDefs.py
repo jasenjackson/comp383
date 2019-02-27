@@ -158,12 +158,13 @@ def spades_assemble(out, *inputs):
     in1_exists = os.path.isfile(inputs[0])
     in2_exists = os.path.isfile(inputs[2])
     output_exists = os.path.isdir(out)
-    #if not output_exists:
-    if in1_exists and in2_exists:
-        spades_command = "spades.py --quiet -k 55,77,99,127 -t 4 --only-assembler --pe1-1 "+inputs[0]+" --pe1-2 "+inputs[1]+" --pe2-1 "+inputs[2]+" --pe2-2 "+inputs[3]+" -o "+out+"/"
-        print(spades_command)
-        os.system(spades_command)
-    else: print("Could not find input mapped fastqs")
+    if not output_exists:
+        if in1_exists and in2_exists:
+            spades_command = "spades.py -k 55,77,99,127 -t 4 --only-assembler --pe1-1 "+inputs[0]+" --pe1-2 "+inputs[1]+" --pe2-1 "+inputs[2]+" --pe2-2 "+inputs[3]+" -o "+out+"/"
+            print(spades_command)
+            os.system(spades_command)
+        else: print("Could not find input mapped fastqs")
+    else: print("Files have already been assembled: "+out)
 
 ## Output filtered contigs with length > n (saves as contigs.filtered.n.fasta)
 def filter_contigs(assembly, n):
