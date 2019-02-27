@@ -98,19 +98,21 @@ if __name__ == '__main__':
     print("## Moving to OptionB_Jasen_Jackson\n")
     prev_wd = os.getcwd()
     os.chdir("OptionB_Jasen_Jackson")
-    log_file = open("OptionB.log", "w+") ## start log file.
 
     ## get to work!
     log_message = ""
-    log_file.write(bt(genome, genome_name, in_files, samples, log_message)) # step 1 (bt = bowtie) // in all options
+    log_message += bt(genome, genome_name, in_files, samples, log_message) # step 1 (bt = bowtie) // in all options
     if args.mode == "2" or args.mode == "full":
-        log_file.write(th(genome, genome_name, in_files, samples, log_message)) # step 2 (th = tophat)
+        log_message += th(genome, genome_name, in_files, samples, log_message) # step 2 (th = tophat)
     if args.mode == "3" or args.mode == "full":
-        log_file.write(sp("HCMV.fa", "hcmv", in_files, samples, log_message)) # step 3 (sp = spades)
+        log_message += sp("HCMV.fa", "hcmv", in_files, samples, log_message) # step 3 (sp = spades)
 
     ## finish up
+    print("## Writing to log file...")
+    log_file = open("OptionB.log", "w+") ## start log file.
+    log_file.write(log_message)
     print("## Finishing up...deleting unnecessary files")
-    os.system("rm "+genome); print("\t## Removed copied genome folder")
+    os.system("rm "+genome); print("## Removed copied genome folder")
     #os.system("rm *.sra")
     ## remove unncessary files
     print("")
