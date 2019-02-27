@@ -28,16 +28,16 @@ These must be installed to your path, for the script to work.
   * *"2"* runs the differential expression analysis (1 & 2)
   * *"3"* runs the strain comparison (1 & 3)
 *  *-g*,*--genome:* fasta file containg the HCMV reference genome (must be .fasta/.fa)
-*  *-i,--input:* list of SRA *ids* for the transcriptome data. Currently, only two input files can be used.  
-*  *-s,--sample:* (optional) a user-provided name for each sample. Must be in the same order as the input files! 
+*  *-i*,--input:* list of SRA *ids* for the transcriptome data. Currently, only two input files can be used.  
+*  *-s*,--sample:* (optional) a user-provided name for each sample. Must be in the same order as the input files! 
 
 ## Example
 
-To run the entire pipeline, just clone this repository and run the following command:
+To run the entire pipeline, just clone this repository and run the following command. The results will be stored in OptionB_Jasen_Jackson/OptionB.log. All data will be stored here as well.
 
-    python3 main.py -m "full" -g "HCMVA.fasta" --g HCMV.fa -i SRR5660044,SRR5660045 -s 2dpi,6dpi
+    python3 main.py -m "full" --g HCMV.fa -i SRR5660044,SRR5660045 -s 2dpi,6dpi
     
- The results will be stored in OptionB_Jasen_Jackson/OptionB.log. All data will be stored here as well. 
+ 
 
 
 
