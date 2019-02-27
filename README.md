@@ -24,7 +24,9 @@ This analysis can be broken down into three main steps:
 # instructions
 The main.py script takes 4 arguments:
 *  '-m','--mode': specifies which mode to run the program in ("full", "2" or "3").
-  * "full" mode runs all three steps. "2" runs steps 1 and 2. "3" runs steps 1 and 3. 
+  * "full" mode runs all three steps. 
+  *"2" runs steps 1 and 2.
+  *"3" runs steps 1 and 3. 
 *  '-g','--genome': fasta file containg the HCMV reference genome (must be .fasta/.fa)
 *  '-i','--input': list of SRA *ids* for the transcriptome data
 *  '-s','--sample': (optional) a user-provided name for each sample. Must be in the same order as the samples!
