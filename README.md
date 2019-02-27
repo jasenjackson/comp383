@@ -17,7 +17,7 @@ A reference sequence of the HCMV genome is available on this repository (HCMV.fa
 
 # overview
 This analysis can be broken down into three main steps:
-1. align the transcriptomes to the reference genome (HCMV.fa), and remove anything that does not align.
+1. align the transcriptomes to the reference genome (HCMV.fa), using bowtie and remove anything that does not align.
 2. analyze different expression levels between the provided transcriptomes using TopHat and CuffLinks.
 3. assemble both transcriptomes using spades, and blast that against the non-repeat nucleotide.
 
@@ -32,5 +32,12 @@ The main.py script takes 4 arguments:
 *  '-s','--sample': (optional) a user-provided name for each sample. Must be in the same order as the samples!
 
 # command line instruction
+
+To run everything from the beginning, with my original settings, just navigate ("CD") to the "OptionB_Jasen_Jackson" folder and run the following command:
+
+    python3 main.py -m full -g HCMVA.fasta --g HCMV.fa -i SRR5660044,SRR5660045 -s 2dpi,6dpi
+    
+  
+
 
 
