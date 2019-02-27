@@ -23,18 +23,19 @@ This analysis can be broken down into three main steps:
 
 # instructions
 The main.py script takes 4 arguments:
-* '-m','--mode': specifies which mode to run the program in ("full", "2" or "3")
+* -m,--mode: specifies which mode to run the program in ("full", "2" or "3")
   * "full" mode runs all three steps. 
   * "2" runs steps 1 and 2.
   * "3" runs steps 1 and 3. 
-*  '-g','--genome': fasta file containg the HCMV reference genome (must be .fasta/.fa)
-*  '-i','--input': list of SRA *ids* for the transcriptome data
-*  '-s','--sample': (optional) a user-provided name for each sample. Must be in the same order as the samples!
+*  -g,--genome: fasta file containg the HCMV reference genome (must be .fasta/.fa)
+*  -i,--input: list of SRA *ids* for the transcriptome data
+*  -s,--sample: (optional) a user-provided name for each sample. Must be in the same order as the samples!
 
 # command line instruction
 
-To run everything from the beginning, with my original settings, just navigate ("CD") to the "OptionB_Jasen_Jackson" folder and run the following command:
+To run everything from the beginning, with my original settings, just navigate to the "OptionB_Jasen_Jackson" folder and run the following command:
 
+    cd OptionB_Jasen_Jackson
     python3 main.py -m full -g HCMVA.fasta --g HCMV.fa -i SRR5660044,SRR5660045 -s 2dpi,6dpi
     
   
