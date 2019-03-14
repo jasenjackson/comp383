@@ -8,6 +8,28 @@ The code in this repository functions as a pipeline to analyze the data from thi
 2. Analyze how expression levels of various genes differ between two provided samples.
 3. Identify the specific strain, by assembling all provided transcriptomes and using the contig as a BLASTN query.  
 
+  bin
+├── Usearchlinux
+├── filterer
+├── filterer_old
+├── flash
+├── noError
+│   ├── frag_1.fastq
+│   └── frag_2.fastq
+├── out.extendedFrags.fastq
+├── out.hist
+├── out.histogram
+├── out.notCombined_1.fastq
+├── out.notCombined_2.fastq
+├── pear-0.9.6-bin-64
+├── step12
+└── step45
+
+
+
+
+
+
 ## Data
 A reference sequence of the HCMV genome is available for download on this repository (HCMV.fa). However, the transcriptome data sets are too large to store on github. Instead, the script handles SRA IDs as the file input for the transcripts and uses WGET to download them from the NCBI database. All other files will be generated locally on your computer, in the "OptionB_Jasen_Jackson" folder. The SRR numbers used in the demos are SRR5660044 (2dpi) and SRR5660045 (6dpi).
 
